@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CochesComponent } from './coches/coches.component';
 import { CocheService } from './coches/coche.service';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {path: '', redirectTo: '/coches', pathMatch: 'full'},
@@ -22,6 +23,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [CocheService],
