@@ -1,0 +1,28 @@
+<div class="card border-danger mb-3">
+    <div class="card-header">Coches</div>
+    <div class="card-body">
+        <h5 class="card-title">Listado de coches</h5>
+
+        <table class="table table-bordered table-striped text-center">
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Fecha Matriculación</th>
+                    <th>Bastidor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let coche of coches">
+                    <td>{{coche.matricula}}</td>
+                    <td>{{coche.marca}}</td>
+                    <td>{{coche.modelo}}</td>
+                    <td>{{coche.fechaMatriculacion}}</td>
+                    <td>{{coche.bastidor}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
