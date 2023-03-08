@@ -5,6 +5,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.componente';
 import { FooterComponent } from './footer/footer.component';
 import { CochesComponent } from './coches/coches.component';
+import { CocheService } from './coches/coche.service';
+import {RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+  {path: '', redirectTo: '/coches', pathMatch: 'full'},
+  {path: 'coches', component: CochesComponent},
+];
 
 @NgModule({
   declarations: [
@@ -14,9 +21,10 @@ import { CochesComponent } from './coches/coches.component';
     CochesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [CocheService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
