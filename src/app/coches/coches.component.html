@@ -13,6 +13,7 @@
                     <th>Modelo</th>
                     <th>Fecha Matriculación</th>
                     <th>Bastidor</th>
+                    <th>Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,9 @@
                     <td>{{coche.modelo}}</td>
                     <td>{{coche.fechaMatriculacion}}</td>
                     <td>{{coche.bastidor}}</td>
+                    <td>
+                        <button type="button" name="button" [routerLink]="['/coches/form', coche.matricula]" class="btn btn-primary">Editar</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

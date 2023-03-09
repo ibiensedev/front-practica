@@ -1,5 +1,6 @@
 import { OnInit, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Coche } from './coche';
 import { CocheService } from './coche.service';
 
@@ -13,18 +14,33 @@ export class FormComponent implements OnInit {
   titulo: string = "Crear coche"
 
   constructor(private cocheService: CocheService,
-    private router: Router) {
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
 
   }
 
   ngOnInit() {
-
+    this.cargarCoche()
   }
 
-  public crearCoche(): void {
-    this.cocheService.crearCoche(this.coche).subscribe(
-      response => this.router.navigate(['/coches'])
-    )
+
+  cargarCoche(): void{
+    this.activatedRoute.params.subscribe(params =>  {
+      let matricula = params['matricula']
+      if (matricula) {
+        this.cocheService.getCoche(matricula).subscribe(coche=> this.coche = coche)
+      }
+    })
+  }
+
+
+  crearCoche(): void {
+    this.cocheService.crearCoche(this.coche)
+    .subscribe( 
+      coche => {
+        this.router.navigate(['/coches'])
+        Swal.fire('Nuevo coche', `Coche ${coche.matricula} creado con éxito!`, 'success')
+    });
   }
 
 }

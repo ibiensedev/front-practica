@@ -20,4 +20,8 @@ export class CocheService {
     return this.http.post<Coche>(this.urlEndPoint, coche, {headers: this.httpHeaders});
   }
 
+  getCoche(matricula): Observable<Coche> {
+    return this.http.get<Coche>(`${this.urlEndPoint}/${matricula}`)
+ }
+
 }
