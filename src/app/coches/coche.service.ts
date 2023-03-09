@@ -24,4 +24,8 @@ export class CocheService {
     return this.http.get<Coche>(`${this.urlEndPoint}/${matricula}`)
  }
 
+ actualizar(coche: Coche): Observable<Coche> {
+  return this.http.put<Coche>(`${this.urlEndPoint}/${coche.matricula}`, coche, {headers: this.httpHeaders});
+ }
+
 }

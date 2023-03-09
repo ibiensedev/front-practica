@@ -43,4 +43,11 @@ export class FormComponent implements OnInit {
     });
   }
 
+  actualizarCoche(): void {
+    this.cocheService.actualizar(this.coche).subscribe(coche => {
+      this.router.navigate(['/coches'])
+      Swal.fire('Coche actualizado', `Coche ${coche.matricula} actualizado con éxito!`, 'success')
+    })
+  }
+
 }
