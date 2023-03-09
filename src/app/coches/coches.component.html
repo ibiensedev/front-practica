@@ -14,6 +14,7 @@
                     <th>Fecha Matriculación</th>
                     <th>Bastidor</th>
                     <th>Editar</th>
+                    <th>Borrar</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +26,9 @@
                     <td>{{coche.bastidor}}</td>
                     <td>
                         <button type="button" name="button" [routerLink]="['/coches/form', coche.matricula]" class="btn btn-primary">Editar</button>
+                    </td>
+                    <td>
+                        <button type="button" name="button" (click)='borrarCoche(coche)' class="btn btn-danger">Borrar</button>
                     </td>
                 </tr>
             </tbody>

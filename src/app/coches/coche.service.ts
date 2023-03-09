@@ -21,11 +21,17 @@ export class CocheService {
   }
 
   getCoche(matricula): Observable<Coche> {
-    return this.http.get<Coche>(`${this.urlEndPoint}/${matricula}`)
+    return this.http.get<Coche>(`${this.urlEndPoint}/${matricula}`);
  }
 
  actualizar(coche: Coche): Observable<Coche> {
   return this.http.put<Coche>(`${this.urlEndPoint}/${coche.matricula}`, coche, {headers: this.httpHeaders});
  }
+
+ 
+ borrarCoche(matricula: string): Observable<Coche> {
+  return this.http.delete<Coche>(`${this.urlEndPoint}/${matricula}`, {headers: this.httpHeaders});
+
+}
 
 }
