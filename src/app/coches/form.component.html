@@ -1,0 +1,45 @@
+<div class="card bg-dark text-white mt-3 mx-3">
+    <div class="card-header">{{ titulo }}</div>
+    <div class="card-body">
+
+        <form (ngSubmit)="crearCoche()">
+            <div class="form-group row my-2">
+                <label for="matricula" class="col-form-label col-sm-2">Matrícula</label>
+                <div class="col-sm-6"> 
+                    <input type="text" class="form-control" [(ngModel)]="coche.matricula" name="matricula">
+                </div>
+            </div>
+            <div class="form-group row  my-2">
+                <label for="marca" class="col-form-label col-sm-2">Marca</label>
+                <div class="col-sm-6"> 
+                    <input type="text" class="form-control" [(ngModel)]="coche.marca" name="marca">
+                </div>
+            </div>
+            <div class="form-group row my-2">
+                <label for="modelo" class="col-form-label col-sm-2">Modelo</label>
+                <div class="col-sm-6"> 
+                    <input type="text" class="form-control" [(ngModel)]="coche.modelo" name="modelo">
+                </div>
+            </div>
+            <div class="form-group row  my-2">
+                <label for="fechaMatriculacion" class="col-form-label col-sm-2">Fecha Matriculación</label>
+                <div class="col-sm-6"> 
+                    <input type="text" class="form-control" [(ngModel)]="coche.fechaMatriculacion" name="fechaMatriculacion">
+                </div>
+            </div>
+            <div class="form-group row  my-2">
+                <label for="bastidor" class="col-form-label col-sm-2">Bastidor</label>
+                <div class="col-sm-6"> 
+                    <input type="text" class="form-control" [(ngModel)]="coche.bastidor" name="bastidor">
+                </div>
+            </div>
+
+            <div class="form-group row  my-2">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" role="button">Crear</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
